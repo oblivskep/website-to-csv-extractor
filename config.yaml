@@ -1,0 +1,9 @@
+url: "https://books.toscrape.com/"
+
+items_selector: "article.product_pod"
+
+fields:
+  title: "h3 a::attr(title)"
+  price: ".price_color"
+  link: "h3 a::attr(href)"
+
