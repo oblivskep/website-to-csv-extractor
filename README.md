@@ -1,48 +1,66 @@
-Website → CSV Data Extractor (Python)
+# 🌐 Website → CSV Data Extractor (Python)
 
-Turn any website listing into a clean CSV/Excel file.
+> Extract structured data from public websites and deliver it as clean CSV/Excel files.
 
-This small Python tool extracts structured data (titles, prices, links, etc.) from a webpage using a simple config file.
-Change the config → run the script → get output.csv.
+This small Python tool uses a simple configuration file to collect repeating items (titles, prices, links, etc.) from a webpage and export them into `output.csv`.
 
-What this is for
+Change the config → run the script → get a spreadsheet.
 
-Product lists
+---
 
-Directories
+## 🧩 What this is for
 
-Catalogs
-
-Search results
-
-Any repeating items on a page
+- Product listings
+- Directories
+- Catalogs
+- Search results
+- Any page with repeating items
 
 You provide a URL and the fields you want. The script does the rest.
 
-Example demo site
-Books to Scrape
-4
+---
 
-Demo URL:
+## ▶️ Example Demo Site
 
+Demo used in this repository:
+
+Books to Scrape  
 https://books.toscrape.com/
 
-Project structure
-scraper/
- ├─ scraper.py
- ├─ config.yaml
- ├─ requirements.txt
- └─ output.csv
+### Source website example
+![Website example](site_example.png)
 
-Installation
+### Output CSV example
+![CSV example](example_output.png)
+
+---
+
+## 📁 Project structure
+
+scraper.py  
+config.yaml  
+requirements.txt  
+README.md  
+site_example.png  
+example_output.png  
+
+---
+
+## ⚙️ Installation
+
+```bash
 pip install -r requirements.txt
+```
 
-How it works
+---
 
-All customization happens in config.yaml.
+## 🛠 How it works
 
-Example:
+All customization happens in **config.yaml**.
 
+Example used for the demo site:
+
+```yaml
 url: "https://books.toscrape.com/"
 
 items_selector: "article.product_pod"
@@ -51,52 +69,55 @@ fields:
   title: "h3 a::attr(title)"
   price: ".price_color"
   link: "h3 a::attr(href)"
+```
 
-Run
+---
+
+## ▶️ Run
+
+```bash
 python scraper.py
+```
 
-
-Result:
+The result will be:
 
 output.csv
 
+Ready to open in Excel or Google Sheets.
 
-Ready to open in Excel / Google Sheets.
+---
 
-How to adapt to any website
+## 🔎 How to adapt to any website
 
-Open the target website
+1. Open the target website
+2. Right click an item → Inspect
+3. Find the CSS selector for the repeating container
+4. Find selectors for the fields you want
+5. Put them into `config.yaml`
+6. Run the script
 
-Inspect the repeating item (right click → Inspect)
+---
 
-Find the CSS selector for the container
+## 📦 What a client sends
 
-Find selectors for each field you want
+- Website URL
+- Fields they want (title, price, link, etc.)
 
-Put them in config.yaml
+## 📤 What they receive
 
-Run the script
+- Clean CSV / Excel file with the extracted data
 
-Example output
-title	price	link
-A Light in the Attic	£51.77	catalogue/a-light-in-the-attic_1000/index.html
-What a client sends me
+---
 
-Website URL
+## 📋 Requirements
 
-Fields they want (title, price, link, etc.)
+requests  
+beautifulsoup4  
+pyyaml  
 
-What they receive
+---
 
-Clean CSV / Excel file with the data
+## ✅ Notes
 
-Requirements
-requests
-beautifulsoup4
-pyyaml
-
-Notes
-
-Works for static websites (no login, no heavy JavaScript)
-
-Fast, simple, reusable template for data extraction tasks
+- Designed for public, static websites (no login required)
+- Fast, simple, reusable template for real data extraction tasks
