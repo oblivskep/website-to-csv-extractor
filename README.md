@@ -121,3 +121,9 @@ pyyaml
 
 - Designed for public, static websites (no login required)
 - Fast, simple, reusable template for real data extraction tasks
+
+---
+
+## License
+
+MIT License. See `LICENSE`.
