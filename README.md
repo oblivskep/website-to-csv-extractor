@@ -20,6 +20,34 @@ You provide a URL and the fields you want. The script does the rest.
 
 ---
 
+## Visual Schema
+
+```text
++---------------------------+
+| Target Website URL        |
++---------------------------+
+             |
+             v
++---------------------------+
+| Config File (config.yaml) |
+| URL + selectors + fields  |
++---------------------------+
+             |
+             v
++---------------------------+
+| scraper.py                |
+| fetch + parse + extract   |
++---------------------------+
+             |
+             v
++---------------------------+
+| Structured Output         |
+| output.csv / Excel-ready  |
++---------------------------+
+```
+
+---
+
 ## ▶️ Example Demo Site
 
 Demo used in this repository:
