@@ -20,10 +20,10 @@ This service uses a simple YAML configuration to collect repeating website items
 +---------------------------+
              |
              v
-+---------------------------+
-| scraper.py                |
-| fetch + parse + extract   |
-+---------------------------+
++-------------------------------+
+| website_to_csv_extractor.py   |
+| fetch + parse + extract       |
++-------------------------------+
              |
              v
 +---------------------------+
@@ -50,7 +50,7 @@ pip install -r requirements.txt
 ### Quickstart
 
 ```bash
-python scraper.py
+python website_to_csv_extractor.py
 ```
 
 The script reads `config.yaml` and writes `output.csv` in the project directory.
@@ -85,11 +85,11 @@ https://books.toscrape.com/
 
 ### Source Website
 
-![Website example](site_example.png)
+![Website example](example_source_website.png)
 
 ### Output CSV
 
-![CSV example](example_output.png)
+![CSV example](example_output_csv.png)
 
 ## Use Cases
 
@@ -101,6 +101,7 @@ https://books.toscrape.com/
 
 - Designed for public, mostly static websites.
 - Login-protected pages, heavy JavaScript rendering, and anti-bot bypassing are out of scope for this script.
+- `scraper.py` is kept as a compatibility wrapper and calls `website_to_csv_extractor.py`.
 
 ## License
 
