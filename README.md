@@ -101,7 +101,6 @@ https://books.toscrape.com/
 
 - Designed for public, mostly static websites.
 - Login-protected pages, heavy JavaScript rendering, and anti-bot bypassing are out of scope for this script.
-- `scraper.py` is kept as a compatibility wrapper and calls `website_to_csv_extractor.py`.
 
 ## License
 
